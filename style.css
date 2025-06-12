@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #8FBC8F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#game-container {
+    width: 600px;
+    height: 800px;
+    border: 2px solid #333;
+    position: relative;
+    background-color: #87CEEB; /* Grass color */
+}
+
+#gameCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+#game-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#controls {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+#buddySlider {
+    width: 80%;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.game-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+.large-btn {
+    padding: 20px 40px;
+    font-size: 1.2em;
+    margin: 20px;
+}
+
+.game-btn {
+    padding: 10px 20px;
+    font-size: 1em;
+    margin: 10px;
+}

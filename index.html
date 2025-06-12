@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Protector Pup!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="game-overlay">
+            <div id="game-info">
+                <span id="score">Score: 0</span>
+                <span id="health">Health: 100%</span>
+                <span id="dog-treats">Treats: 0</span>
+            </div>
+            <button id="pauseButton">Pause</button>
+            <button id="upgradeButton">Upgrades</button>
+        </div>
+
+        <div id="controls">
+            <input type="range" id="buddySlider" min="0" max="100">
+            <button id="autoBarkButton" class="hidden">Auto Bark</button>
+        </div>
+
+        <div id="start-screen" class="game-screen">
+            <h1>Home Protector Pup!</h1>
+            <button id="startButton" class="large-btn">Start Game</button>
+        </div>
+
+        <div id="upgrade-menu" class="game-screen hidden">
+            <h2>Upgrades</h2>
+            <div id="upgrade-items">
+                <button id="speedUpgrade">Speed Boost (Cost: 10 Treats)</button>
+                <button id="barkRangeUpgrade">Bark Range (Cost: 15 Treats)</button>
+                <button id="autoBarkUpgrade">Auto Bark (Cost: 20 Treats)</button>
+            </div>
+            <button id="closeUpgradeMenu" class="game-btn">Close</button>
+        </div>
+
+        <div id="game-over-screen" class="game-screen hidden">
+            <h2>Game Over</h2>
+            <p>Your final score: <span id="finalScore"></span></p>
+            <button id="restartButton" class="large-btn">Restart</button>
+        </div>
+
+        <div id="loading-screen" class="game-screen">
+            <h2>Loading...</h2>
+        </div>
+    </div>
+
+    <script src="entities.js"></script>
+    <script src="upgrades.js"></script>
+    <script src="input.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

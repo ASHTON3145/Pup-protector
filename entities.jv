@@ -1,0 +1,66 @@
+const assets = {};
+let assetsLoadedCount = 0;
+let totalAssets = 0;
+
+function loadAsset(name, path, type) {
+    totalAssets++;
+    return new Promise((resolve) => {
+        const asset = type === 'image' ? new Image() : new Audio();
+        asset.src = path;
+        asset.onload = asset.oncanplaythrough = () => {
+            assetsLoadedCount++;
+            resolve();
+        };
+        assets[name] = asset;
+    });
+}
+
+function allAssetsLoaded() {
+    return assetsLoadedCount === totalAssets;
+}
+
+class Buddy {
+    constructor(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.speed = 5;
+        this.barkRange = 50;
+        this.autoBarkUnlocked = false;
+        this.autoBarkActive = false;
+        this.autoBarkCooldown = 0;
+    }
+
+    draw(ctx) {
+        ctx.drawImage(assets.buddy, this.x, this.y, this.width, this.height);
+    }
+
+    upgradeSpeed() {
+        this.speed += 2;
+    }
+
+    upgradeBarkRange() {
+        this.barkRange += 20;
+    }
+
+    unlockAutoBark() {
+        this.autoBarkUnlocked = true;
+    }
+
+    activateAutoBark() {
+        if (this.autoBarkUnlocked && this.autoBarkCooldown === 0) {
+            this.autoBarkActive = true;
+            this.autoBarkCooldown = 300; // Cooldown timer
+        }
+    }
+
+    updateAutoBark() {
+        if (this.autoBarkActive) {
+            this.autoBarkCooldown--;
+            if (this.autoBarkCooldown <= 0) {
+                this.autoBarkActive = false;
+            }
+        }
+    }
+}

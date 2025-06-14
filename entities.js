@@ -5,7 +5,7 @@ let totalAssets = 0;
 function loadAsset(name, path, type) {
     totalAssets++;
     return new Promise((resolve) => {
-        const asset = type === 'image' ? new Image() : new Audio();
+        const asset = type === 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fphotos%2Fwhite-mutt&psig=AOvVaw3CuTcYBIUO5d0IkwHJpI5F&ust=1749874908410000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOD7v5jG7Y0DFQAAAAAdAAAAABAE' ? new Image() : new Audio();
         asset.src = path;
         asset.onload = asset.oncanplaythrough = () => {
             assetsLoadedCount++;
